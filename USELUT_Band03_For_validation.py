@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
 
 import numpy as np
 from Py6S import *
@@ -22,30 +17,6 @@ import ephem
 from decimal import Decimal, ROUND_HALF_UP
 
 
-# In[ ]:
-
-
-
-
-
-# In[1]:
-
-
-def FindPixel(x,y):
-    lat = int((50 - x)/0.005)
-    lon = int((y - 120)/0.005)
-    return lat,lon
-
-def dms2deg(dms):
-    h = dms[0]
-    m = dms[1]
-    s = dms[2]
-    deg = Decimal(str(h + (m / 60) + (s / 3600))).quantize(Decimal('0.0001'), rounding=ROUND_HALF_UP)
-    return deg
-
-
-# In[7]:
-
 
 # Before using this, you need to set some input path.
 # set your account at def download_AOT
@@ -61,11 +32,14 @@ def dms2deg(dms):
 
 
 #Set date and path
-YYYY = '2019'
-MM = ['05']
-DD = ['07']
-MIN = ['20']
-HH = ['06']
+YYYY='2018'
+MM=['01','02','03','04','05','06','07','08','09','10','11','12']
+DD=['01','02','03','04','05','06','07','08','09','10',\
+    '11','12','13','14','15','16','17','18','19','20',\
+    '21','22','23','24','25','26','27','28','29','30',\
+    '31']
+HH=['00','01','02','03','04','05','06','07','08']
+MIN=['00','10','20','30','40','50']
 
 target ='/media/liwei/Data/AHI_AC_RESULT/'
 SZA_path = '/media/liwei/Data/AHI_Angle/Solar_zenith_angle/'
@@ -81,8 +55,6 @@ site_name = 'TKY'
 
 Validation_site = int((50 - 36.1462)/0.005),int((137.4231 - 120)/0.005)
 
-
-# In[3]:
 
 
 sza = np.linspace(0,80,17)
