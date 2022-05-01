@@ -240,8 +240,8 @@ fn1 = RegularGridInterpolator((water,AOT,raa,sza_new,vza_new),X1_new_inter_resha
 fn2 = RegularGridInterpolator((water,AOT,raa,sza_new,vza_new),X2_new_inter_reshape,bounds_error=False,fill_value=np.nan)  
 fn3 = RegularGridInterpolator((water,AOT,raa,sza_new,vza_new),X3_new_inter_reshape,bounds_error=False,fill_value=np.nan)
 
-lat_x=np.linspace(50,20,1501)
-lon_y=np.linspace(120,150,1501)
+lat_x=np.linspace(50,20.02,150)
+lon_y=np.linspace(120,149.98,1500)
 
 BAND=Hi8_band()
 
