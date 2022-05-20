@@ -206,7 +206,8 @@ with open(VZA_path,'rb') as fp:
     view_zM = np.fromstring(fp.read()).reshape(1500,1500) 
 with open(VAZ_path,'rb') as fp:
     view_aM = np.fromstring(fp.read()).reshape(1500,1500)     
-
+view_zM = np.flip(view_zM,axis=0)
+view_aM = np.flip(view_aM,axis=0)
 # read LUT
 outfile1 = LUT_path + '01_band6.csv'
 outfile2 = LUT_path + '02_band6.csv'
